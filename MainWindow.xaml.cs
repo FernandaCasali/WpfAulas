@@ -14,5 +14,9 @@ namespace WpfApp2
             
         }
 
+        private void btnFire_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Could not open file", "ERROR!", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
     }
 }

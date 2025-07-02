@@ -17,7 +17,8 @@
         <Button Name="btnFire" 
                 Content="Fire"
                 Width="100"
-                Height="40"/>
+                Height="40"
+                Click="btnFire_Click"/>
 
         <TextBlock Grid.Row="1" 
                    Name="tbinfo" 
