@@ -1,15 +1,15 @@
-﻿using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+﻿using System.ComponentModel;
 using System.Windows;
 
 namespace WpfApp2
 {
 
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
 
         public MainWindow()
         {
+            DataContext = this;
             InitializeComponent();
             
         }
@@ -17,10 +17,16 @@ namespace WpfApp2
 
         private string boundText;
 
+        public event PropertyChangedEventHandler? PropertyChanged;
+
         public string BoundText
         {
             get { return boundText; }
-            set { boundText = value; }
+            set 
+            { 
+                boundText = value; 
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("BoundText"));
+            }
         }
 
     }
