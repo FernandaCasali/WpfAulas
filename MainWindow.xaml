@@ -12,26 +12,15 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBox x:Name="txtInput" 
-                 VerticalContentAlignment="Center" 
-                 Width="250" 
-                 Height="40" 
-                 FontSize="16" 
-                 Text="{Binding BoundText, UpdateSourceTrigger=PropertyChanged, Mode=OneWayToSource}"/>
-
-        <Button Grid.Row="1" 
-                Name="tbSet" 
-                Content="Set"
+        <Button Name="btnFire" 
+                Content="Fire"
                 Width="100"
-                Height="40"
-                Click="tbSet_Click"/>
+                Height="40"/>
 
-        <TextBlock Grid.Row="2" 
-                   Name="tbResult" 
-                   Text="{Binding BoundText}" 
+        <TextBlock Grid.Row="1" 
+                   Name="tbinfo" 
                    FontSize="16" 
                    VerticalAlignment="Center" 
                    HorizontalAlignment="Center"/>
