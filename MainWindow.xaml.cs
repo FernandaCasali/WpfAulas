@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Windows;
 
 namespace WpfApp2
@@ -24,14 +25,19 @@ namespace WpfApp2
             get { return boundText; }
             set 
             { 
-                boundText = value; 
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("BoundText"));
+                boundText = value;
+                OnPropertyChanged();
             }
         }
 
         private void tbSet_Click(object sender, RoutedEventArgs e)
         {
             BoundText = "set from code";
+        }
+
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
