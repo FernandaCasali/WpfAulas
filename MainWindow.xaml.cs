@@ -1,5 +1,5 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿using Microsoft.Win32;
+
 using System.Windows;
 
 namespace WpfApp2
@@ -16,18 +16,17 @@ namespace WpfApp2
 
         private void btnFire_Click(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show("Could not open file", "ERROR!", MessageBoxButton.OK, MessageBoxImage.Error);
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            bool? success = fileDialog.ShowDialog();
 
-            MessageBoxResult result = MessageBox.Show
-                ("Do you agree?", "Agreement", MessageBoxButton.YesNo, MessageBoxImage.Question);
-
-            if (result == MessageBoxResult.Yes)
+            if (success == true)
             {
-                tbinfo.Text = "Agreed";
+               string path = fileDialog.FileName;
+               tbinfo.Text = path;
             }
             else
             {
-                tbinfo.Text = "Disagreed";
+                //didnt pick anything
             }
         }
     }

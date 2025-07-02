@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp2"
         xmlns:userControls="clr-namespace:WpfApp2.View.UserControls"
         mc:Ignorable="d"
-        Title="Tom&amp;Luke" Height="250" Width="300">
+        Title="Tom&amp;Luke" Height="250" Width="600">
     <Grid>
 
         <Grid.RowDefinitions>
