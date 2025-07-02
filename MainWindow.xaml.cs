@@ -14,5 +14,14 @@ namespace WpfApp2
             
         }
 
+
+        private string boundText;
+
+        public string BoundText
+        {
+            get { return boundText; }
+            set { boundText = value; }
+        }
+
     }
 }
