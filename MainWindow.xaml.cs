@@ -29,5 +29,9 @@ namespace WpfApp2
             }
         }
 
+        private void tbSet_Click(object sender, RoutedEventArgs e)
+        {
+            BoundText = "set from code";
+        }
     }
 }
