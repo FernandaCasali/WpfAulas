@@ -11,31 +11,12 @@ namespace WpfApp2
         public MainWindow()
         {
             InitializeComponent();
-            
+            lvEntries.Items.Add("a");
+            lvEntries.Items.Add("a1");
+            lvEntries.Items.Add("a2");
+            lvEntries.Items.Add("a3");
+            lvEntries.Items.Add("a4");
         }
 
-        private void btnFire_Click(object sender, RoutedEventArgs e)
-        {
-            OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Filter = "C# Source Files | *.cs";
-            fileDialog.Title = "Select C# Source Files";
-
-            fileDialog.Multiselect = true; // permite selecionar multiplos arquivos
-
-            bool? success = fileDialog.ShowDialog();
-
-            if (success == true)
-            {
-               string[] paths = fileDialog.FileNames;
-               string[] fileNames = fileDialog.SafeFileNames;
-
-                //tbinfo.Text = fileName;
-
-            }
-            else
-            {
-                //didnt pick anything
-            }
-        }
     }
 }
