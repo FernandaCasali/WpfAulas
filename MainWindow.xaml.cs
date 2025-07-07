@@ -22,7 +22,10 @@ namespace WpfApp2
             if (success == true)
             {
                string path = fileDialog.FileName;
-               tbinfo.Text = path;
+               string fileName = fileDialog.SafeFileName;
+
+                tbinfo.Text = fileName;
+
             }
             else
             {
