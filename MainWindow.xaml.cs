@@ -17,14 +17,19 @@ namespace WpfApp2
         private void btnFire_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "C# Source Files | *.cs";
+            fileDialog.Title = "Select C# Source Files";
+
+            fileDialog.Multiselect = true; // permite selecionar multiplos arquivos
+
             bool? success = fileDialog.ShowDialog();
 
             if (success == true)
             {
-               string path = fileDialog.FileName;
-               string fileName = fileDialog.SafeFileName;
+               string[] paths = fileDialog.FileNames;
+               string[] fileNames = fileDialog.SafeFileNames;
 
-                tbinfo.Text = fileName;
+                //tbinfo.Text = fileName;
 
             }
             else
