@@ -1,5 +1,5 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿using Microsoft.Win32;
+
 using System.Windows;
 
 namespace WpfApp2
@@ -16,18 +16,25 @@ namespace WpfApp2
 
         private void btnFire_Click(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show("Could not open file", "ERROR!", MessageBoxButton.OK, MessageBoxImage.Error);
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "C# Source Files | *.cs";
+            fileDialog.Title = "Select C# Source Files";
 
-            MessageBoxResult result = MessageBox.Show
-                ("Do you agree?", "Agreement", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            fileDialog.Multiselect = true; // permite selecionar multiplos arquivos
 
-            if (result == MessageBoxResult.Yes)
+            bool? success = fileDialog.ShowDialog();
+
+            if (success == true)
             {
-                tbinfo.Text = "Agreed";
+               string[] paths = fileDialog.FileNames;
+               string[] fileNames = fileDialog.SafeFileNames;
+
+                //tbinfo.Text = fileName;
+
             }
             else
             {
-                tbinfo.Text = "Disagreed";
+                //didnt pick anything
             }
         }
     }
