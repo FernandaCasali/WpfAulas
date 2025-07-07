@@ -1,5 +1,5 @@
 ﻿using Microsoft.Win32;
-
+using System.Collections;
 using System.Windows;
 
 namespace WpfApp2
@@ -26,11 +26,17 @@ namespace WpfApp2
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             //int index = lvEntries.SelectedIndex;
-            object item = lvEntries.SelectedItem;
-            var result = MessageBox.Show($"Are you sure you want to delete: {(string) item}?",
+            //object item = lvEntries.SelectedItem;
+            var items = lvEntries.SelectedItems;
+
+            var result = MessageBox.Show($"Are you sure you want to delete {items.Count} items?",
                 "Sure?", MessageBoxButton.YesNo, MessageBoxImage.Warning);
             if ( result == MessageBoxResult.Yes)
-                lvEntries.Items.Remove(item);
+            {
+                var itemsList = new ArrayList(items);
+                foreach (var item in itemsList)
+                    lvEntries.Items.Remove(item);
+            }
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)

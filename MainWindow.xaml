@@ -33,7 +33,7 @@
         <ListView Name="lvEntries" 
                   Grid.Row="1" 
                   Grid.ColumnSpan="2" 
-                  SelectionMode="Single"/>
+                  SelectionMode="Extended"/>
     </Grid>
 
 </Window>
