@@ -19,10 +19,21 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
+        <TextBox Name="txtEntry" Height="35" FontSize="16"/>
+        
+        <Button Name="btnAdd" Content="Add" Width="50" FontSize="16" 
+                Grid.Column="1" Click="btnAdd_Click" HorizontalAlignment="Left"/>
+
+        <Button Name="btnDelete" Content="Del" Width="50" FontSize="16" 
+                Grid.Column="1" Click="btnDelete_Click" HorizontalAlignment="Left" Margin="60,0,0,0"/>
+
+        <Button Name="btnClear" Content="Clear" Width="50" FontSize="16" 
+                Grid.Column="1" Click="btnClear_Click" HorizontalAlignment="Left" Margin="120,0,0,0"/>
+
         <ListView Name="lvEntries" 
                   Grid.Row="1" 
                   Grid.ColumnSpan="2" 
-                  />
+                  SelectionMode="Single"/>
     </Grid>
 
 </Window>
