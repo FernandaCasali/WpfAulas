@@ -25,8 +25,12 @@ namespace WpfApp2
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            int index = lvEntries.SelectedIndex;
-            lvEntries.Items.RemoveAt(index);
+            //int index = lvEntries.SelectedIndex;
+            object item = lvEntries.SelectedItem;
+            var result = MessageBox.Show($"Are you sure you want to delete: {(string) item}?",
+                "Sure?", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if ( result == MessageBoxResult.Yes)
+                lvEntries.Items.Remove(item);
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
